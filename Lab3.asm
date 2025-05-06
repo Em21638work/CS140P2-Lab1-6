@@ -15,8 +15,8 @@ main:
     lw $t2, hval
     lw $t3, ival
     lw $t4, jval
-
-    slt $t5, $t3, $t4
+    
+    slti $t5, $t3, 10
     beq $t5, $zero, false 
     add $t0, $t1, $t2
     j exit

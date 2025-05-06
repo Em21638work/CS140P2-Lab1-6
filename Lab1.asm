@@ -1,27 +1,32 @@
 .data
-    g: .word 100
-    h: .word 200
-    ival: .word 10
-    jval: .word 20
-    f: .word 0
+    gval: .word 10
+    hval: .word 5
+    ival: .word 100
+    jval: .word 200
+    fval: .word 0
 
 .text
 .globl main
 
 main:
 
-    lw $t1, g
-    lw $t2, h
+    lw $t0, fval
+    lw $t1, gval
+    lw $t2, hval
     lw $t3, ival
     lw $t4, jval
 
     bne $t3, $t4, false
     add $t0, $t1, $t2
-    j endif
+    j exit
 false: 
-    sub $t0, $t1, $t2
-endif:
-     sw $t0, f
+    lui $t5, 0xFFFF
+    ori $t5, $t5, 0xFFFF
+    xor $t2, $t2, $t5
+    addi $t2, $t2, 1
+    add $t0, $t1, $t2  
+exit:
+     sw $t0, fval
 
      li $v0, 1
      move $a0, $t0
