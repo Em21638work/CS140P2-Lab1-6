@@ -18,7 +18,7 @@ main:
     ori $t7, $t0, 0
 loop:
     
-    lw $t7, 0($t0)
+    lw $t7, 0($t7)
     add $t1, $t1, $t7
 
     add $t3, $t3, $t4

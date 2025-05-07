@@ -15,7 +15,7 @@ main:
     ori $t2, $t0, 0
 loop:
     lw $t2, 0($t2)
-    slt $t2, $t3, $t2
+    slt $t4, $t3, $t2
     bne $t4, $zero, exit
 
     addi $t1, $t1, 1
