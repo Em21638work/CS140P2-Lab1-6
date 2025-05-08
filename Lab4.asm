@@ -11,7 +11,7 @@ main:
     la $t0, A   # t0: the stating address of array A
     lw $t1, sum
     lw $t2, N
-    lw $t4, 1
+    lui $t4, 1
     ori $t3, $zero, 0
     ori $t4, $zero, 2
 
